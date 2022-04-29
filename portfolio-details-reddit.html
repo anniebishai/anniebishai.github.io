@@ -89,7 +89,8 @@
 
         <div class="row gy-4">
           <h2>Using NLP to Distinguish Pro- and Anti-Choice Language on Reddit</h2>
-          <p>I used Reddit's API to gather posts from r/prochoice and r/prolife. Using Scikit-Learn's Natural Language Toolkit, I vectorized the posts and conducted sentiment analysis, and then built a decision tree model to predict whether a given post came from r/prolife or r/prochoice.</p>
+          <p>I used Reddit's API to collect a corpus of 10,000 posts from r/prochoice and r/prolife, two subreddits on opposite sides of the debate over abortion rights. Using Scikit-Learn's Natural Language Toolkit, I vectorized the posts and conducted sentiment analysis, and then built several models (logistic regression and decision tree classifier) in an effort to determine which would perform best at predicting which subreddit a given text came from.<p></p>This project is under construction: I am working to improve the classification model. Free to explore what's here, and come back later for improvements.</p>
+          </p>
           <h4>See presentation slides:</h4>
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
@@ -110,7 +111,7 @@
                 <li><a href="https://github.com/anniebishai/Reddit-Language-on-Abortion"><span><h3>See on GitHub</h3></span></a></li>
                 <li><strong>Key Tools:</strong></li>
                   <p>
-                    APIs, NLTK CountVectorizer, NLTK Sentiment Intensity Analyzer, Decision Trees, Pandas
+                    APIs; NLTK CountVectorizer, TFIDF Vectorizer, Sentiment Intensity Analyzer; Decision Trees; Logistic Regression; Pandas
                   <p>
                 <li><strong>Created February 2022</strong></li>
               </ul>
