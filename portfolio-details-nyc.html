@@ -95,9 +95,51 @@
             <div class="portfolio-details-slider swiper">
                 <div>
                   <iframe width="720" height="400"
-                    src="https://www.youtube.com/embed/YKKC0O9qfbg">
+                    src="https://www.youtube.com/embed/XsxYOX2_6K0">
                   </iframe>
                 </div>
+                <br>
+              <h4>Video transcript:</h4>
+              <br>
+              <p>[label reads: Some background on where I got the idea for this project] Recently, I’ve been following an ongoing issue in New York City about the environmental impacts of the Brooklyn-Queens Expressway, a highway that cuts through residential areas of the city. A concern shared by a lot of people is that this urban highway puts enormous amounts of toxins, including fine particulate matter, or PM2.5, into the air. The Brooklyn Daily Eagle reported that 153,000 trucks and cars travel the BQE daily, and that global studies show that PM2.5, which is emitted by such vehicles, cuts an average of 2 years off life expectancies of children who grow up breathing it. The BQE runs near a number of schools and homes. Specific plans to reimagine this particular transportation corridor are apparently underway, but they are a subject of disagreement among residents and the government.
+                <br><br>
+                Brooklyn Heights, one of the neighborhoods through which the BQE runs, is one of the wealthiest neighborhoods of the city. However, fine particulate matter and other air pollutants are present throughout New York, and I wondered whether across the city, there is a relationship between air quality and the wealth of residents. We know that in many parts of the world, impoverished communities bear the brunt of climate change and other environmental health risks. 
+                <br><br>
+                In New York City, the wealthy and the poor live in close proximity to each other, so I suspected that the relationship between wealth and environmental quality might be difficult to discern using only air quality. So for this project, I delved into another interesting variable, which is street trees.
+                <br>
+                The Department of Parks and Recreation has planted and maintains hundreds of thousands of trees on the streets of New York. We all know that trees improve air quality by filtering out toxins; they also improve environmental quality by cooling the city in the summer, reducing runoff, and hosting wildlife. Wouldn’t you agree that, if you could afford it, you would rather live in a neighborhood with big trees and birds singing?
+                <br><br>
+                Every ten years, the Parks Department conducts a street tree census, which inventories the species, size, health, and other metrics of nearly every tree in the city. The first step of this data science project was to gather this data from 2005 and 2015 and group the trees by the census tract they are located in using Geopandas. Then, I combined this data with air quality metrics from years in the same period. I obtained data on median household income for every census tract, as well. I ended up with a map of New York that can be viewed according to all these variables. 
+                <br><br>
+                Here on these Tableau we can see visualizations of several of the air quality measures. Traffic density percent change from2006 to 2015 — we can see that traffic density actually got better in these areas of BK and Qn we were talking about earlier. Fine particulate matter has gotten better in central Manhattan and Staten Island. Nitrogen dioxide, another measure we included, got worse between 2009 and 2017, especially in midtown, in areas of highly dense buildings. You can scroll around and see the names of the community district [in which each of these is measured]. 
+                <br><br>
+                Here’s a map of the tree data, aggregated for each census tract — that’s the smallest unit here, smaller than the areas we were seeing [for] the air quality measures. So here I’m sorting by density, combined, in 2015 and 2005. The Upper East Side has a high tree density; these parts of Staten Island have a low tree density. Here in the tooltip, you can see lots of metrics for each census tract.
+                <br><br>
+                Finally, here’s the map of what I used as a target variable in the modeling, which I’ll tell you about in a moment: income by census tract. The darker the blue, the wealthier the people are, by median household income. With all this data in hand, I went on to build a model based on the environmental variables.
+                <br><br>
+                I used Scikit-Learn’s Random Forest regressor, which ensembles many different decision trees, each of which is assigned a random subset of features, or variables, to make its prediction on. This model performed better than the baseline (which would be to predict the mean income in every case), but it showed high variance, meaning it doesn’t work reliably on unseen data. 
+                <br><br>
+                Here’s a graph showing error in the model’s predictions on the test dataset. The closer the point is to zero on the y-axis, the more accurate the prediction was. The points are color-coded by borough, and the higher predicted values are further to the right on the x-axis.
+                <br><br>
+                At the time I recorded this video, the model was running with around a 63% R2 score, meaning the environmental features I chose could account for about 63% of variance in median household income. It’s not perfect, but it’s a start. Analysis of the model shows that nitrogen dioxide and ozone levels were the most important features in the model’s predictions. Then came several street tree metrics. 
+                <br><br>
+                I think this project is pretty important in learning more about the relationships between how wealthy people are and the environmental quality of where they live—namely air quality and the trees the city plants to improve it. Please feel free to check out the GitHub repo and the Tableau visualizations from the links here in my portfolio. Thanks for watching!</p>
+                <br>
+                <p><strong>Articles cited:</strong></p>
+                <br>
+                <p><a href="https://bklyner.com/opinion-the-bqe-is-in-a-state-of-total-crisis-and-so-are-the-local-residents-who-literally-need-a-breath-of-fresh-air/"> Opinion: The BQE is in a State of Total Crisis — and So are the Local Residents Who, Literally, Need a Breath of Fresh Air</a>
+                 by April Somboun,
+                in <em>Bklyner,</em> published 6/3/2021</p>
+                <br>
+                <p><a href="https://nyc.streetsblog.org/2021/11/11/idea-of-tearing-down-the-bqe-gets-fresh-look-as-feds-open-their-wallets/"> Idea of ‘Tearing Down the BQE’ Gets Fresh Look as Feds Open Their Wallet</a>
+                by Julianne Cuba,
+                in <em>Streetsblog,</em> published 11/11/2021</p>
+               <br>
+                <p><a href="https://brooklyneagle.com/articles/2018/12/17/bqe-dangerous-levels-toxic-pollution-brooklyn-heights/">
+                Expert: City’s BQE plan could bring dangerous levels of toxic pollution to Brooklyn Heights </a>
+                by Mary Frost,
+                in <em>Brooklyn Daily Eagle,</em> published 12/17/2018
+                </p>
 
               <div class="swiper-pagination"></div>
             </div>

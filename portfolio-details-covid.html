@@ -99,6 +99,30 @@
                     src="https://www.youtube.com/embed/5DJ6nLahwzE">
                   </iframe>
                 </div>
+                <br>
+                <h4>Video transcript:</h4>
+                <br>
+                <p>This project on COVID vaccination and the American political divide was a group project I completed as part of the General Assembly Data Science Immersive.
+                  <br>
+                  <br>
+                  My team and I were interested in the way COVID-19 vaccination became politicized, and we wanted to use machine learning to explore and clarify that. We decided to look at vaccination rates and outcomes of the 2020 election in the counties of the US.
+                  <br><br>
+                  We began with a CDC dataset containing vaccination rates over time in all of the counties. We used Pandas to clean that dataset, identified three moments in time between March 2021 and March 2022 to offer a snapshot of each county’s progress over time, and added features from a few other sources, including social vulnerability in each county, and some basic demographics like population age. Our first goal was to fit a clustering model to identify groups of counties that showed similar patterns in vaccination. We hypothesized that these groupings would look similar to the split between counties that voted for Biden and those that voted for Trump in the 2020 election.
+                  <br><br>
+                  
+                  So here’s what we came up with. We used a KMeans clustering model, which worked better than K Nearest Neighbors, the other option from the Scikit-learn library that we tried. We clustered the counties using only vaccination and demographic data. When we compared the percentage of counties in each cluster that voted for Trump, we found that we were right, and there were clear similarities between voting patterns and vaccination patterns.
+                  <br><br>
+                  Here’s a visualization of percentages of votes in each county for Trump, in red, and for Biden, in blue.
+                  <br><br>
+                  And here’s a visualization of the three clusters that the model came up with.
+                  <br><br>
+                  The yellow cluster is generally urban, slightly younger, got vaccinated quickly, and generally voted for Biden. Then there’s the green cluster: these are more rural counties that had lower vaccination rates and more hesitancy about the vaccine, and generally voted for Trump. And then there was the orange cluster, mostly in Texas, which had the lowest vaccination rates and also high hesitancy. Its demographics sort of straddle those in the other two clusters. What distinguishes the orange cluster is that most of these counties had missing COVID data. I’ll come back to this in a moment.
+                  <br><br>
+                  After looking at these clusters, one of my team members helped us take it one step further and fitted a predictive model to the vaccination and demographic data to predict the 2020 election outcome by county as a target variable. They used a stacking classification model, resembling several different classifiers, and it predicted with 91% accuracy, 8% higher than the baseline. Here’s a confusion matrix of that model.
+                  <br><br>
+                  My responsibilities in this project included data cleaning and  fitting the clustering model, and I found that observation about the missing data very interesting. We decided to keep the rows with missing vaccination data in the dataset, rather than dropping them, because we realized the data was not missing at random. Local compliance with federal vaccination efforts, like the vaccination rates themselves, were politicized, especially at the beginning of the pandemic, so what we saw makes sense: that in a lot of metrics, like vaccine hesitancy and 2020 election outcomes, the counties that had missing vaccine data had similar averages to those in that green cluster, which was more conservative and vaccine-hesitant, than they were to the yellow cluster. Moreover, I went back and looked at the classification model and found that it performed worse if we took out the rows with missing data, which could be because the dataset became smaller, but it also suggests that the fact of a county not reporting COVID vaccine data is an important feature in predicting how the county voted. The takeaway is that you can learn a lot from missing values, and it’s not always the best decision to drop them, especially if you can identify that the values are not missing at random.
+                  <br><br>
+                  That’s a quick intro to this project. You can take a look at the repo on GitHub if you’d like to check out or code or a more detailed write-up of the project.</p>
 
               <div class="swiper-pagination"></div>
             </div>
